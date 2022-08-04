@@ -1,26 +1,9 @@
 /**
-<<<<<<< HEAD
- * Author: Johan Sannemo
- * Date: 2016-12-15
- * License: CC0
- * Description: pi[x] computes the length of the longest prefix of s that ends at x,
- * other than s[0...x] itself (abacaba -> 0010123).
- * Can be used to find all occurrences of a string.
- * Time: O(n)
-||||||| parent of fcedd4f (modify strings)
- * Author: Johan Sannemo
- * Date: 2016-12-15
- * License: CC0
- * Description: pi[x] computes the length of the longest prefix of s that ends at x, other than s[0...x] itself (abacaba -> 0010123).
- * Can be used to find all occurrences of a string.
- * Time: O(n)
-=======
  * Author: hhhhaura
  * Date: 2022/08/04
  * Description: $f[x]$ = the longest prefix $i$, so that $s(0:i)$ is a suffix of $s(0:x)$.
  * When $A_i \neq B_{j + 1}$ move $j$ to $f[j]$.
  * Time: $O(|A| + |B|)$
->>>>>>> fcedd4f (modify strings)
  * Status: Tested on kattis:stringmatching
  */
 #pragma once
