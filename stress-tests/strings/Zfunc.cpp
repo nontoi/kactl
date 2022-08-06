@@ -3,19 +3,18 @@
 #include "../../content/strings/Zfunc.h"
 
 template <class F> void gen(string &s, int at, int alpha, F f) {
-	if (at == sz(s))
-		f();
-	else {
-		rep(i, 0, alpha) {
-			s[at] = (char)('a' + i);
-			gen(s, at + 1, alpha, f);
-		}
-	}
+    if (at == sz(s))
+        f();
+    else {
+        rep(i, 0, alpha) {
+            s[at] = (char)('a' + i);
+            gen(s, at + 1, alpha, f);
+        }
+    }
 }
 
-void test(string &s) {
-    /*
-	int n = sz(s);
+void test(const string &s) {
+    int n = sz(s);
     vi found = zvalue(s);
     vi expected(n, 0);
     rep(i, 1, n) { // exclude index 0 (!)
@@ -25,7 +24,6 @@ void test(string &s) {
         expected[i] = j;
     }
     assert(found == expected);
-	*/
 }
 
 signed main() {
