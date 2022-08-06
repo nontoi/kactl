@@ -6,7 +6,19 @@
  * Status: stress-tested
  */
 #pragma once
-vi Z(const string &s) {
+<<<<<<< HEAD
+
+vi Z(const string& S) {
+	vi z(sz(S));
+	int l = -1, r = -1;
+	rep(i,1,sz(S)) {
+		z[i] = i >= r ? 0 : min(r - i, z[i - l]);
+		while (i + z[i] < sz(S) && S[i + z[i]] == S[z[i]])
+			z[i]++;
+		if (i + z[i] > r)
+			l = i, r = i + z[i];
+=======
+vi zvalue(string &s) {
 	int n = sz(s);
 	vi z(n, 0);
 	int l = 1, r = 0;
@@ -15,6 +27,7 @@ vi Z(const string &s) {
 		while(i + z[i] < n && s[i + z[i]] == s[z[i]]) {
 			l = i, r = i + z[i], z[i] ++;
 		}
+>>>>>>> 0efb2e9 (fix Zfunc.h)
 	}
 	return z;
 }
