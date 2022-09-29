@@ -18,3 +18,5 @@ vi Z(const string &s) {
 	}
 	return z;
 }
+
+

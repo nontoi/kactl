@@ -39,3 +39,4 @@ struct SuffixArray {
 					s[i + k] == s[j + k]; k++);
 	}
 };
+
