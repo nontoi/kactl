@@ -51,6 +51,7 @@
 #include "ModMulLL.h"
 #include "MillerRabin.h"
 
+mt19937_64 mt((unsigned) chrono::system_clock::now().time_since_epoch().count());
 ull pollard(ull n) {
 	ull x = 0, y = 0, t = 30, prd = 2, i = 1, q;
 	auto f = [&](ull x) { return modmul(x, x, n) + i; };
