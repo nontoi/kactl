@@ -44,7 +44,7 @@ template<class T> int SolveLinear(vector<vector<T>>& A,
     B.clear();
     rep(i, rank, m) {
         vector<T> sol(m);
-        rep(j, 0, rank) sol[col[j]] = (A[j][i] * T(mod - 1));
+        rep(j, 0, rank) sol[col[j]] = (A[j][i] * T(-1));
         rep(j, rank, m) sol[col[j]] = (j == i ? 1 : 0);
         B.push_back(sol);
     }

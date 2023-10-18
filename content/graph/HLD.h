@@ -21,7 +21,7 @@ template <bool VALS_EDGES> struct HLD {
 	int N, tim = 0;
 	vector<vi> adj;
 	vi par, siz, depth, rt, pos;
-  SGT<V, T> tree;
+  SGT<Val, Tag> tree;
 	HLD(vector<vi> adj_)
 		: N(sz(adj_)), adj(adj_), par(N, -1), siz(N, 1), depth(N),
 		  rt(N),pos(N),tree(N){ dfsSz(0); dfsHld(0); }
