@@ -11,15 +11,18 @@
 #pragma once
 
 struct Val {
-  Val() {} // must return identity element   
-  Val operator + (const Val& o) const {}
+  int v;
+  Val(int v = 0) : v(v) {} // must return identity element   
+  Val operator + (const Val& o) const {
+    return Val(max(v, o.v)); }
   // merge two Vals, order is important
 };
 struct Tag {
-  Tag() {} // must return identity element
-  Tag operator + (const Tag& o) const {}
+  int t;
+  Tag(int t = 0) : t(t) {} // must return identity element
+  Tag operator + (const Tag& o) const { return Tag(t + o.t); }
   // compose two Tags, order is important
-  Val operator() (Val v) const {}
+  Val operator() (Val v) const { return Val(v.v + t); }
   // apply the Tag to v
 };
 
