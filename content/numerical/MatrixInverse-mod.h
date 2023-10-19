@@ -29,7 +29,7 @@ found:
 		rep(j,0,n)
 			swap(A[j][i], A[j][c]), swap(tmp[j][i], tmp[j][c]);
 		swap(col[i], col[c]);
-		ll v = modpow(A[i][i], mod - 2);
+		ll v = modpow(A[i][i], mod - 2, mod);
 		rep(j,i+1,n) {
 			ll f = A[j][i] * v % mod;
 			A[j][i] = 0;

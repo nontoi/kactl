@@ -11,13 +11,9 @@
 #pragma once
 
 struct Node {
-  unsigned rnd() {
-    static unsigned x = 71;
-    return ++(x *= 0xdefaced);
-  }
 	Node *l = 0, *r = 0;
-	int val, c = 1; unsigned y;
-	Node(int val) : val(val), y(rnd()) {}
+	int val, c = 1, y; // maybe not use rand()!
+	Node(int val) : val(val), y(rand()) {}
   void pull();
 };
 int cnt(Node* n) { return n ? n->c : 0; }

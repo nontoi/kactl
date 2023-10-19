@@ -1,9 +1,8 @@
 #include "../utilities/template.h"
 
-const ll mod = 5;
-ll modpow(ll a, ll e) {
+ll modpow(ll a, ll e, const ll mod) {
 	if (e == 0) return 1;
-	ll x = modpow(a * a % mod, e >> 1);
+	ll x = modpow(a * a % mod, e >> 1, mod);
 	return e & 1 ? x * a % mod : x;
 }
 
