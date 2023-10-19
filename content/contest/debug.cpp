@@ -12,7 +12,7 @@ template<class I> void LKJ(I&&x){ cerr << x << endl; }
 template<class I, class...T> void LKJ(I&&x, T&&...t)
 { cerr << x << ", ", LKJ(t...); }
 template<class I> void print(I a, I b)
-{ while(a < b) cerr << *a << " \n"[next(a) == b], ++a; }
+{ while(a != b) cerr << *a++ << ' '; cerr << endl;}
 #else
 #define debug(...) ((void)0)
 #define print(...) ((void)0)
