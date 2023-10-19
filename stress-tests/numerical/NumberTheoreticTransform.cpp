@@ -4,12 +4,12 @@ typedef vector<ll> vl;
 namespace ignore {
 #include "../../content/number-theory/ModPow.h"
 }
-ll modpow(ll a, ll e);
+ll modpow(ll a, ll e, const ll mod);
 #include "../../content/numerical/NumberTheoreticTransform.h"
-ll modpow(ll a, ll e) {
+ll modpow(ll a, ll e, const ll mod) {
     if (e == 0)
         return 1;
-    ll x = modpow(a * a % mod, e >> 1);
+    ll x = modpow(a * a % mod, e >> 1, mod);
     return e & 1 ? x * a % mod : x;
 }
 
@@ -44,10 +44,10 @@ int main() {
 		for(auto &x: conv(a, b)) res2 += (ll)x * ind2++ % mod;
 		a.resize(16);
         vl a2 = a;
-        ntt(a2);
+        ntt(a2.data(), sz(a2));
         rep(k, 0, sz(a2)) {
             ll sum = 0;
-            rep(x, 0, sz(a2)) { sum = (sum + a[x] * modpow(root, k * x * (mod - 1) / sz(a))) % mod; }
+            rep(x, 0, sz(a2)) { sum = (sum + a[x] * modpow(root, k * x * (mod - 1) / sz(a), mod)) % mod; }
             assert(sum == a2[k]);
         }
 	}
