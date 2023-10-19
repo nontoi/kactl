@@ -48,10 +48,10 @@ vl conv(const vl &a, const vl &b) {
   if (a.empty() || b.empty()) return {};
   int s = sz(a) + sz(b) - 1, n = 1 << (32 - __builtin_clz(s));
   ll inv = modpow(n, mod - 2, mod);
-  vl L(a), R(b), out(n);
-  L.resize(n); R.resize(n);
-  ntt(L.data(), n); ntt(R.data(), n);
-  rep(i,0,n) out[-i & (n-1)] = L[i] * R[i] % mod * inv % mod;
+  vl x(a), y(b), out(n);
+  x.resize(n); y.resize(n);
+  ntt(x.data(), n); ntt(y.data(), n);
+  rep(i,0,n) out[-i & (n-1)] = x[i] * y[i] % mod * inv % mod;
   ntt(out.data(), n);
   return {begin(out), begin(out) + s};
 }
