@@ -11,10 +11,10 @@
 
 #include "ModPow.h"
 
-ll sqrt(ll a, ll p) {
+ll modsqrt(ll a, ll p) { // return -1 on fail
 	a %= p; if (a < 0) a += p;
 	if (a == 0) return 0;
-	assert(modpow(a, (p-1)/2, p) == 1); // else no solution
+	if (modpow(a, (p-1)/2, p) != 1) return -1;
 	if (p % 4 == 3) return modpow(a, (p+1)/4, p);
 	// a^(n+3)/8 or 2^(n+3)/8 * 2^(n-1)/4 works if p % 8 == 5
 	ll s = p - 1, n = 2;
@@ -29,7 +29,7 @@ ll sqrt(ll a, ll p) {
 		ll t = b;
 		for (m = 0; m < r && t != 1; ++m)
 			t = t * t % p;
-		if (m == 0) return x;
+		if (m == 0) return min(x, p - x);
 		ll gs = modpow(g, 1LL << (r - m - 1), p);
 		g = gs * gs % p;
 		x = x * gs % p;
