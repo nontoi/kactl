@@ -8,9 +8,8 @@
  */
 #pragma once
 
-template <class T>
-T euclid(T a, T b, T &x, T &y) {
+ll euclid(ll a, ll b, ll &x, ll &y) {
 	if (!b) return x = 1, y = 0, a;
-	T d = euclid(b, a % b, y, x);
+	ll d = euclid(b, a % b, y, x);
 	return y -= a/b * x, d;
 }

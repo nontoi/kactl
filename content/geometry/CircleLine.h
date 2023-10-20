@@ -13,7 +13,7 @@
 
 #include "Point.h"
 
-template<class P>
+typedef Point<double> P;
 vector<P> circleLine(P c, double r, P a, P b) {
 	P ab = b - a, p = a + ab * (c-a).dot(ab) / ab.dist2();
 	double s = a.cross(b, c), h2 = r*r - s*s / ab.dist2();
