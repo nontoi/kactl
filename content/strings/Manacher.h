@@ -13,7 +13,8 @@ int Manacher(string &s) {
 	vi v(n, 1);
 	rep(i, 1, n - 1) {
 		v[i] = max(1, min(v[l + l - i], r - i + 1));
-		while(0 <= i - v[i] && i + v[i] < n && t[i + v[i]] == t[i - v[i]]) {
+		while(0 <= i - v[i] && i + v[i] < n &&
+        t[i + v[i]] == t[i - v[i]]) {
 			l = i, r = i + v[i], v[i] ++;
 		}
 	}
