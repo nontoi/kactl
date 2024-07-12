@@ -42,7 +42,7 @@ vector<pii> generalMatching(int N, vector<pii>& ed) {
 		if (fj < N) ret.emplace_back(fi, fj);
 		has[fi] = has[fj] = 0;
 		rep(sw,0,2) {
-			ll a = modpow(A[fi][fj], mod-2);
+			ll a = modpow(A[fi][fj], mod-2, mod);
 			rep(i,0,M) if (has[i] && A[i][fj]) {
 				ll b = A[i][fj] * a % mod;
 				rep(j,0,M) A[i][j] = (A[i][j] - A[fi][j] * b) % mod;

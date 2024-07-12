@@ -13,6 +13,7 @@
 
 #include "../number-theory/ModPow.h"
 
+const ll mod = 998244353;
 int matInv(vector<vector<ll>>& A) {
 	int n = sz(A); vi col(n);
 	vector<vector<ll>> tmp(n, vector<ll>(n));

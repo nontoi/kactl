@@ -1,22 +1,6 @@
 #include "../utilities/template.h"
 #include "../utilities/genTree.h"
 
-const int inf = 1 << 30;
-struct V {
-  int v;
-  V(int v = -inf) : v(v) {} // must return identity element   
-  V operator + (const V& o) const { return V(max(v, o.v)); }
-  // merge two Vals, order is important
-};
-struct T {
-  int t;
-  T(int t = 0) : t(t) {} // must return identity element
-  T operator + (const T& o) const { return T(t + o.t); }
-  // compose two Tags, order is important
-  V operator() (V v) const { return V(v.v + t); }
-  // apply the Tag to v
-};
-
 #include "../../content/graph/HLD.h"
 
 namespace old {
@@ -100,7 +84,7 @@ void testAgainstOld(int n, int iters, int queries) {
     }
     HLD<false> hld(tree1);
     old::HLD hld2(tree2);
-    hld.tree = SGT<V, T>(vector<V>(n, V(0)));
+    hld.tree = SGT<Val, Tag>(vector<Val>(n, Val(0)));
     for (int itr = 0; itr < queries; itr++) {
       if (rand() % 2) {
         int node = rand() % n;
@@ -125,7 +109,7 @@ void testAgainstBrute(int n, int iters, int queries) {
     }
     HLD<false> hld(tree1);
     bruteforce hld2(tree1);
-    hld.tree = SGT<V, T>(vector<V>(n, V(0)));
+    hld.tree = SGT<Val, Tag>(vector<Val>(n, Val(0)));
     for (int itr = 0; itr < queries; itr++) {
       int rng = rand() % 3;
       if (rng == 0) {

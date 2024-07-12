@@ -10,7 +10,7 @@
 #include "../number-theory/ModPow.h"
 #include "../number-theory/ModSqrt.h"
 
-template <ll mod, ll root> struct Poly : vl {
+template <ll mod = 998244353, ll root = 3> struct Poly : vl {
   typedef Poly P;
   static int bc(int n)
   { return n <= 1 ? 1 : 1 << (32 - __builtin_clz(n - 1)); }

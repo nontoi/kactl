@@ -10,10 +10,10 @@
 
 #include "Polynomial.h"
 
-vector<double> polyRoots(Poly p, double xmin, double xmax) {
+vector<double> polyRoots(Poly<> p, double xmin, double xmax) {
 	if (sz(p.a) == 2) { return {-p.a[0]/p.a[1]}; }
 	vector<double> ret;
-	Poly der = p;
+	Poly<> der = p;
 	der.diff();
 	auto dr = polyRoots(der, xmin, xmax);
 	dr.push_back(xmin-1);
