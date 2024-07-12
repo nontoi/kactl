@@ -1,0 +1,44 @@
+\documentclass[9pt, a4paper, notitlepage]{extreport}
+\usepackage{kactlpkg}
+\kactlcontentdir{content}
+
+<<<<<<< HEAD
+\university{NTU}{National Taiwan University}{nontoi_logo}
+\team{nontoi}{FHVirus, nathanlee726, hhhhaura}
+||||||| parent of 9ffe701 (modify cover page)
+\university{KTH}{KTH Royal Institute of Technology}{kth}
+\team{Omogen Heap}{Simon Lindholm, Johan Sannemo, Mårten Wiman}
+=======
+\university{NTU}{National Taiwan University}{kth}
+\team{nontoi}{FHVirus, nathanlee726, hhhhaura}
+>>>>>>> 9ffe701 (modify cover page)
+% \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
+\contest{\ }{\today}
+% \enablecolors
+
+\begin{document}
+	\maketeampage
+	% Small KACTL header on the first page:
+	% \maketitle{``One Last Time'' Edition}{\today}
+	\begin{multicols*}{3}
+	\thispagestyle{fancy}
+	% Table of contents, without subsections:
+	\setcounter{tocdepth}{0}
+	\tableofcontents
+
+	\kactlchapter{contest}
+	\kactlchapter{math}
+	\kactlchapter{data-structures}
+	\kactlchapter{numerical}
+	\kactlchapter{number-theory}
+	\kactlchapter{combinatorial}
+	\kactlchapter{graph}
+	\kactlchapter{geometry}
+	\kactlchapter{strings}
+	\kactlchapter{various}
+	\end{multicols*}
+
+	\begin{multicols*}{3}
+	\kactlchapter{appendix}
+	\end{multicols*}
+\end{document}
